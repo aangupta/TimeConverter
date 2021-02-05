@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Converter</title>
+    <script>
+        function currTime(){
+            let t = new Date();
+            document.getElementById("time").innerHTML = Math.floor(( new Date().getTime()/1000));
+            document.getElementById("utc-time").innerHTML = t.toUTCString();
+            document.getElementById("iso-time").innerHTML = t.toISOString();
+        }
+    </script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="currTime()">
+    <header>
+       <h2>Timestamp Converter</h2>
+    </header>
+    <section class="wrapper">
+        <section class ="wrapper-left">
+            <h2>Epoch Unix Timestamp Converter</h2>
+            <div class ="wrapper-left-top">
+                <div class="box">
+                    <div class="box-content" style="min-height: 300px;">
+                        <h2 class ="page-header">The Current Unix Timestamp</h2>
+                        <hr>
+                        <h3 class="text-clr">
+                            <span id="time"></span>
+                            <small>seconds since Jan 01 1970.(UTC)</small>
+                        </h3>
+                        <br>
+                        <h3 class="page-header">This epoch translates to: </h3>
+                        <hr>
+                        <h3 class="text-clr">
+                            <span id="utc-time" style="color: #404040;"></span>
+                        </h3>
+                        <h3>
+                            <span id ="iso-time"></span>
+                            <small> in ISO 8601</small>
+                        </h3>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class ="box-content"style="min-height: 300px;">
+                        <h2 class ="page-header">Timestmap Converter</h2>
+                        <hr>
+                        <h3>Enter a Date and Time : </h3>
+                        <div class="input-section1">
+                            <input type ="text" id ="year" placeholder="YYYY" maxlength="4" size="4">
+                            <input type ="text" id ="month" placeholder="MM"maxlength="2" size="2">
+                            <input type ="text" id ="date" placeholder="DD" maxlength="2"size="2">
+                            @
+                            <input type ="text" id ="hour" placeholder="0" maxlength="2" size="2">
+                            <input type ="text" id ="minute" placeholder="0" maxlength="2" size="2">
+                            <input type ="text" id ="second" placeholder="0" maxlength="2" size="2">
+                            (24h:min:sec)
+                            <input type ="button" id ="convert1" value="Convert">
+                        </div>
+                        <h3>Enter a timestamp</h3>
+                        <div class="input-section2">
+                            <input type ="text" id ="unix-time" placeholder="0123456789" maxlength="15" size="18">
+                            milliseconds
+                        </div>
+                        <div>
+                            <input type ="button" id ="convert2" value="Convert">
+                        </div>                     
+                        <div>
+                            <label for="output-text"><h3>Result: </h3> </label>
+                            <input type ="text" id="output-text" placeholder="Output will be shown here" size="50%">
+                        </div>
+
+        
+                    </div>
+        
+                </div>
+            </div>
+            <div class="wrapper-left-down">
+                <div class="box">
+                    <div class="box-content">
+                        <h2>What is the unix time stamp?</h2>
+                        <p></p>
+                        <p>
+                            The unix time stamp is a way to track time as a running total of seconds. This count starts at the Unix Epoch on January 1st, 1970 at UTC. Therefore, the unix time stamp is merely the number of seconds between a particular date and the Unix Epoch. It should also be pointed out (thanks to the comments from visitors to this site) that this point in time technically does not change no matter where you are located on the globe. This is very useful to computer systems for tracking and sorting dated information in dynamic and distributed applications both online and client side.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <h2>What happens on January 19, 2038?</h2>
+                        <p></p>
+                        <p>
+                            On this date the Unix Time Stamp will cease to work due to a 32-bit overflow. Before this moment millions of applications will need to either adopt a new convention for time stamps or be migrated to 64-bit systems which will buy the time stamp a "bit" more time.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+           
+        </section>
+        <section class="wrapper-right">
+            <h2>Related Tools</h2>
+            <div class="box" style="background-color: transparent;">
+                <div class="box-content" style="min-height: 300px;">
+                   
+                </div>
+            </div>
+
+        </section>
+       
+
+    </section>
+    <footer>
+        <p>Created by &copy; Aanchal Gupta</p>
+    </footer>
+    <script>
+
+        function myfunction(){
+            const epochval = parseInt(unixValue.value);
+            const d = new Date(epochval);
+            result.value = d.toUTCString();
+
+        }
+        function myfunction1(){
+            const y = parseInt(yearValue.value);
+            const m = parseInt(monthValue.value);
+            const d = parseInt(dateValue.value);
+            const h = parseInt(hourValue.value);
+            const min = parseInt(minuteValue.value);
+            const s = parseInt(secondValue.value);
+
+            let date1 = new Date(y,m,d,h,min,s);
+            result.value=date1.getTime();
+        }
+        const yearValue = (document.querySelector('#year'));
+        const monthValue = (document.querySelector('#month'));
+        const dateValue = (document.querySelector('#date'));
+        const hourValue = (document.querySelector('#hour'));
+        const minuteValue = (document.querySelector('#minute'));
+        const secondValue = (document.querySelector('#second'));
+        const unixValue = document.querySelector('#unix-time');
+        const conBtn1 = (document.querySelector('#convert1'));
+        const conBtn2 = (document.querySelector('#convert2'));
+        const result = (document.querySelector('#output-text'));
+        
+        conBtn2.addEventListener('click',myfunction);
+        conBtn1.addEventListener('click',myfunction1);
+        
+    </script>
+    
+</body>
+</html>
