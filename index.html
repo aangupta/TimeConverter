@@ -60,17 +60,23 @@
                             (24h:min:sec)
                             <input type ="button" id ="convert1" value="Convert">
                         </div>
+                        
+                        <div>
+                            <label for="output-text1"><h3>Result: </h3> </label>
+                            <input type ="text" id="output-text1" placeholder="Output will be shown here" size="50%">
+                        </div>
+
                         <h3>Enter a timestamp</h3>
                         <div class="input-section2">
                             <input type ="text" id ="unix-time" placeholder="0123456789" maxlength="15" size="18">
-                            milliseconds
+                            (milliseconds)
                         </div>
                         <div>
                             <input type ="button" id ="convert2" value="Convert">
                         </div>                     
                         <div>
-                            <label for="output-text"><h3>Result: </h3> </label>
-                            <input type ="text" id="output-text" placeholder="Output will be shown here" size="50%">
+                            <label for="output-text2"><h3>Result: </h3> </label>
+                            <input type ="text" id="output-text2" placeholder="Output will be shown here" size="50%">
                         </div>
 
         
@@ -122,7 +128,7 @@
         function myfunction(){
             const epochval = parseInt(unixValue.value);
             const d = new Date(epochval);
-            result.value = d;
+            document.querySelector('#output-text2').value = d;
 
         }
         function myfunction1(){
@@ -134,7 +140,7 @@
             const s = parseInt(secondValue.value);
 
             let date1 = new Date(y,m,d,h,min,s);
-            result.value=date1.getTime();
+            document.querySelector('#output-text1').value=date1.getTime();
         }
         const yearValue = (document.querySelector('#year'));
         const monthValue = (document.querySelector('#month'));
