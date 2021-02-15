@@ -5,28 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Converter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
     <script>
+
+        function updateTime() {
+            setTimeout(currTime, 1000);
+        }
         function currTime(){
             let t = new Date();
             document.getElementById("time").innerHTML = Math.floor(( new Date().getTime()/1000));
             document.getElementById("utc-time").innerHTML = t.toUTCString();
             document.getElementById("iso-time").innerHTML = t.toISOString();
+            updateTime();
         }
     </script>
-    <link rel="stylesheet" href="./style.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body onload="currTime()">
     <header>
        <h2>Timestamp Converter</h2>
-    </header>
+    <header>
+   <nav  class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fliud">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">Utility Application <i class="fa fa-wrench" aria-hidden="true"></i></a>
+            </div>
+            <ul class ="nav navbar-nav">
+                <li class="active"><a href="index.html">Epoch Converter</a></li>
+                <li class="dropdown">
+                    <a href="https://utilityapp1.netlify.app/" target ="blank" class="dropdown-toggle" data-toggle="dropdown">Encoder/Decoder<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://utilityapp1.netlify.app/" target="blank">URL Encoder/Decoder</a></li>
+                        <li><a href="https://utilityapp1.netlify.app/base64encode.html" target="blank">Base64 Encoder</a></li>
+                        <li><a href="https://utilityapp1.netlify.app/base64decode.html" target="blank">Base64 Decoder</a></li>
+                        <li><a href="https://utilityapp1.netlify.app/md5hash.html" target="blank">MD5 HashGenerator</a></li>
+                        <li><a href="https://utilityapp1.netlify.app/sha-1.html" target="blank">SHA-1 HashGenerator</a></li>
+                        <li><a href="https://utilityapp1.netlify.app/sha-256.html" target="blank">SHA-256 HashGenerator</a></li>
+                        <li><a href="https://utilityapp1.netlify.app/sha-512.html"target="blank">SHA-512 HashGenerator</a></li>
+                    </ul>
+
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Color Conversion<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="https://rgbhexutilityapp.netlify.app/" target="blank">RGB To Hex</a></li>
+                    <li><a href="https://rgbhexutilityapp.netlify.app/hextorgb.html" target="blank">Hex To RGB</a></li>
+                    </ul>
+                </li>
+                <!--li><a href="index.html">Epoch Converter</a></li-->
+
+                <li><a href="https://stringutilityapp.netlify.app/" target="blank">String Utility</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Unit Converter<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="https://unitconvertertool.netlify.app/" target="blank">Length</a></li>
+                    <li><a href="https://unitconvertertool.netlify.app/temperature.html" target="blank">Temperature</a></li>
+                    <li><a href="https://unitconvertertool.netlify.app/weight.html" target="blank">Weight</a></li>
+                    <li><a href="https://unitconvertertool.netlify.app/time.html" target="blank">Time</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+   </nav>
+
     <section class="wrapper">
         <section class ="wrapper-left">
-            <h2>Epoch Unix Timestamp Converter</h2>
+            <h2 style ="margin: 2rem;">Epoch Unix Timestamp Converter</h2>
             <div class ="wrapper-left-top">
                 <div class="box">
                     <div class="box-content" style="min-height: 300px;">
                         <h2 class ="page-header">The Current Unix Timestamp</h2>
-                        <hr>
                         <h3 class="text-clr">
                             <span id="time"></span>
                             <small>seconds since Jan 01 1970.(UTC)</small>
@@ -47,21 +106,27 @@
                 <div class="box">
                     <div class ="box-content"style="min-height: 300px;">
                         <h2 class ="page-header">Timestmap Converter</h2>
-                        <hr>
                         <h3>Enter a Date and Time : </h3>
-                        <div class="input-section1">
-                            <input type ="text" id ="year" placeholder="YYYY" maxlength="4" size="4">
-                            <input type ="text" id ="month" placeholder="MM"maxlength="2" size="2">
-                            <input type ="text" id ="date" placeholder="DD" maxlength="2"size="2">
-                            @
-                            <input type ="text" id ="hour" placeholder="0" maxlength="2" size="2">
-                            <input type ="text" id ="minute" placeholder="0" maxlength="2" size="2">
-                            <input type ="text" id ="second" placeholder="0" maxlength="2" size="2">
-                            (24h:min:sec)
-                            <input type ="button" id ="convert1" value="Convert">
+                        <div class="input-section1" style="display: flex; flex-direction: column;">
+                            <div>
+                                <input type ="text" id ="year" placeholder="YYYY" maxlength="4" size="4">
+                                <input type ="text" id ="month" placeholder="MM"maxlength="2" size="2">
+                                <input type ="text" id ="date" placeholder="DD" maxlength="2"size="2">
+                                <span>@</span> 
+                                <input type ="text" id ="hour" placeholder="0" maxlength="2" size="2">
+                                <input type ="text" id ="minute" placeholder="0" maxlength="2" size="2">
+                                <input type ="text" id ="second" placeholder="0" maxlength="2" size="2">
+                                <span>(24h:min:sec)</span>
+                            </div>
+
+                            <div>
+                                <input type ="button" id ="convert1" value="Convert">
+                            </div>
+                            
+                            
                         </div>
                         
-                        <div>
+                        <div style="display: flex; flex-direction: column;">
                             <label for="output-text1"><h3>Result: </h3> </label>
                             <input type ="text" id="output-text1" placeholder="Output will be shown here" size="50%">
                         </div>
@@ -74,7 +139,7 @@
                         <div>
                             <input type ="button" id ="convert2" value="Convert">
                         </div>                     
-                        <div>
+                        <div style="display: flex; flex-direction: column;">
                             <label for="output-text2"><h3>Result: </h3> </label>
                             <input type ="text" id="output-text2" placeholder="Output will be shown here" size="50%">
                         </div>
