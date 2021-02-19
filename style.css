@@ -103,3 +103,11 @@ p {
 header {
   margin-bottom: 2rem;
 }
+
+.page-header h3 {
+  padding: 4rem;
+}
+
+.text-clr {
+  margin: 3rem;
+}
