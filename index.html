@@ -29,167 +29,125 @@
     
 </head>
 <body onload="currTime()">
+
     <header>
-       <h2>Timestamp Converter</h2>
-    <header>
-   <nav  class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fliud">
-            <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">Utility Application <i class="fa fa-wrench" aria-hidden="true"></i></a>
-            </div>
-            <ul class ="nav navbar-nav">
-                <li><a href="https://utilityappmain.netlify.app/index.html">My Public IP Address</a></li>
-                <li><a href="https://utilityappmain.netlify.app/timer.html">Timer</a></li>
-                <li><a href="https://utilityappmain.netlify.app/stopwatch.html">Stopwatch</a></li>
-                <li><a href="https://utilityappmain.netlify.app/languagetranslator">Language Translator</a></li>
-
-               
-                <li class="dropdown">
-                    <a href="https://utilityapp1.netlify.app/" target ="blank" class="dropdown-toggle" data-toggle="dropdown">Encoder/Decoder<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://utilityapp1.netlify.app/" target="blank">URL Encoder/Decoder</a></li>
-                        <li><a href="https://utilityapp1.netlify.app/base64encode.html" target="blank">Base64 Encoder</a></li>
-                        <li><a href="https://utilityapp1.netlify.app/base64decode.html" target="blank">Base64 Decoder</a></li>
-                        <li><a href="https://utilityapp1.netlify.app/md5hash.html" target="blank">MD5 HashGenerator</a></li>
-                        <li><a href="https://utilityapp1.netlify.app/sha-1.html" target="blank">SHA-1 HashGenerator</a></li>
-                        <li><a href="https://utilityapp1.netlify.app/sha-256.html" target="blank">SHA-256 HashGenerator</a></li>
-                        <li><a href="https://utilityapp1.netlify.app/sha-512.html"target="blank">SHA-512 HashGenerator</a></li>
-                    </ul>
-
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Color Conversion<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                    <li><a href="https://rgbhexutilityapp.netlify.app/" target="blank">RGB To Hex</a></li>
-                    <li><a href="https://rgbhexutilityapp.netlify.app/hextorgb.html" target="blank">Hex To RGB</a></li>
-                    </ul>
-                </li>
-                <li class="active"><a href="index.html">Epoch Converter</a></li>
-
-                <li><a href="https://stringutilityapp.netlify.app/" target="blank">String Utility</a></li>
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Unit Converter<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                    <li><a href="https://unitconvertertool.netlify.app/" target="blank">Length</a></li>
-                    <li><a href="https://unitconvertertool.netlify.app/temperature.html" target="blank">Temperature</a></li>
-                    <li><a href="https://unitconvertertool.netlify.app/weight.html" target="blank">Weight</a></li>
-                    <li><a href="https://unitconvertertool.netlify.app/time.html" target="blank">Time</a></li>
-                    </ul>
-                </li>
-
-            </ul>
+        <div class="hd-text">
+            <a style = "text-decoration: none;" href= "index.html" class = "title" > <h2>Epoch Converter</h2></a>
         </div>
+        <div class="home">
+            <a style = "text-decoration: none;" href= "https://utilityappmain.netlify.app/index.html" class = "title" target="_blank" > <h2>Home</h2></a>
+        </div>
+            
+     </header>
 
-   </nav>
-
-    <section class="wrapper">
-        <section class ="wrapper-left">
-            <h2 style ="margin: 2rem; text-align: center;">Epoch Unix Timestamp Converter</h2>
-            <div class ="wrapper-left-top">
-                <div class="box">
-                    <div class="box-content" style="min-height: 300px;">
-                        <h2 class ="page-header">The Current Unix Timestamp</h2>
-                        <h3 class="text-clr">
-                            <span id="time"></span>
-                            <small>seconds since Jan 01 1970.(UTC)</small>
-                        </h3>
-                        <h3 class="page-header">This epoch translates to: </h3>
-                        <h3 class="text-clr">
-                            <span id="utc-time" style="color: #404040;"></span>
-                        </h3>
-                        <h3 class="text-clr">
-                            <span id ="iso-time"></span>
-                            <small> in ISO 8601</small>
-                        </h3>
-                        <p></p>
-                    </div>
+     <div class="wrapper">
+         <div class="wrapper-left">
+             <h3 style = 'margin-bottom: 2rem;'>Epoch Unix Timestamp Converter</h3>
+             <div class="showtime">
+                <div class="box-content"> 
+                    <h3>The Current Unix Timestamp</h3>
+                    <h4 style ="text-align: center; padding: 1rem;">
+                        <span id="time"></span>
+                        <small>seconds since Jan 01 1970.(UTC)</small>
+                    </h4>
+                    <h3>This epoch translates to: </h3>
+                    <h4 style ="text-align: center; padding: 1rem;">
+                        <span id="utc-time" style="color: #404040;"></span>
+                    </h4>
+                    <h4 style ="text-align: center; padding: 1rem;">
+                        <span id ="iso-time"></span>
+                        <small> in ISO 8601</small>
+                    </h4>
                 </div>
-                <div class="box">
-                    <div class ="box-content"style="min-height: 300px;">
-                        <h2 class ="page-header">Timestmap Converter</h2>
-                        <h3>Enter a Date and Time : </h3>
-                        <div class="input-section1" style="display: flex; flex-direction: column;">
+
+                <div class="box-content" style="background-color: white;">
+                    <h3>Timestmap Converter</h3>
+                    <h4>Enter a Date and Time : </h4>
+
+                    <div class ='input1'>
+                        <div class="input">
                             <div>
-                                <input type ="text" id ="year" placeholder="YYYY" maxlength="4" size="4">
-                                <input type ="text" id ="month" placeholder="MM"maxlength="2" size="2">
-                                <input type ="text" id ="date" placeholder="DD" maxlength="2"size="2">
-                                <span>@</span> 
-                                <input type ="text" id ="hour" placeholder="HH" maxlength="2" size="2">
-                                <input type ="text" id ="minute" placeholder="mm" maxlength="2" size="2">
-                                <input type ="text" id ="second" placeholder="ss" maxlength="2" size="2">
-                                <span>(24h:min:sec)</span>
+                                <input type ="text" id ="year" placeholder="YYYY" maxlength="4" size="4" required>
+                                <input type ="text" id ="month" placeholder="MM"maxlength="2" size="2"required>
+                                <input type ="text" id ="date" placeholder="DD" maxlength="2"size="2"required>
+                            </div>
+                            <div style="text-align: center;">@</div> 
+                            <div>
+                                <input type ="text" id ="hour" placeholder="HH" maxlength="2" size="2" required>
+                                <input type ="text" id ="minute" placeholder="mm" maxlength="2" size="2" required>
+                                <input type ="text" id ="second" placeholder="ss" maxlength="2" size="2" required>
                             </div>
 
-                            <div>
-                                <input type ="button" id ="convert1" value="Convert">
-                            </div>
-                            
-                            
+                            <div>(24h:min:sec)</div>
+                        </div>
+
+                        <div>
+                            <input type ="button" id ="convert1" value="Convert" class ='btn'>
+                        </div>
+
+                        <div class ='result'>
+                            <label for="output-text1" class="label">Result</label>
+                            <input type ="text" id="output-text1" placeholder="Output will be shown here" readonly>
+                        </div>
+
+                        <hr style="background-color: black;">
+
+                        <h3>Enter a epoch timestamp</h3>
+
+                        <div class="result" style="display: flex; flex-direction: column; align-items: center;">
+                            <input type ="text" id ="unix-time" placeholder="0123456789" maxlength="13" size="18">
+                            <div>(milliseconds)</div>
+                        </div>
+
+                        <div>
+                            <input type ="button" id ="convert2" value="Convert" class ='btn'>
+                        </div>                     
+                        <div style="display: flex; flex-direction: column; align-items: center;" class="result">
+                            <label for="output-text2" class ='label'>Result</label>
+                            <input type ="text" id="output-text2" placeholder="Output will be shown here" readonly>
                         </div>
                         
-                        <div style="display: flex; flex-direction: column;">
-                            <label for="output-text1"><h3>Result: </h3> </label>
-                            <input type ="text" id="output-text1" placeholder="Output will be shown here" size="50%">
-                        </div>
-
-                        <h3>Enter a timestamp</h3>
-                        <div class="input-section2">
-                            <input type ="text" id ="unix-time" placeholder="0123456789" maxlength="13" size="18">
-                            (milliseconds)
-                        </div>
-                        <div>
-                            <input type ="button" id ="convert2" value="Convert">
-                        </div>                     
-                        <div style="display: flex; flex-direction: column;">
-                            <label for="output-text2"><h3>Result: </h3> </label>
-                            <input type ="text" id="output-text2" placeholder="Output will be shown here" size="50%">
-                        </div>
-
-        
+                        
                     </div>
-        
+
                 </div>
+
+             </div>
+         </div>
+
+         <div class="wrapper-left">
+            <div class="box">
+                <h3>What is the unix time stamp?</h3>
+                <p>The unix time stamp is a way to track time as a running total of seconds. This count starts at the Unix Epoch on January 1st, 1970 at UTC. Therefore, the unix time stamp is merely the number of seconds between a particular date and the Unix Epoch. It should also be pointed out (thanks to the comments from visitors to this site) that this point in time technically does not change no matter where you are located on the globe. This is very useful to computer systems for tracking and sorting dated information in dynamic and distributed applications both online and client side.
+                </p>
             </div>
-            <div class="wrapper-left-down">
-                <div class="box">
-                    <div class="box-content">
-                        <h2>What is the unix time stamp?</h2>
-                        <p></p>
-                        <p>
-                            The unix time stamp is a way to track time as a running total of seconds. This count starts at the Unix Epoch on January 1st, 1970 at UTC. Therefore, the unix time stamp is merely the number of seconds between a particular date and the Unix Epoch. It should also be pointed out (thanks to the comments from visitors to this site) that this point in time technically does not change no matter where you are located on the globe. This is very useful to computer systems for tracking and sorting dated information in dynamic and distributed applications both online and client side.
-                        </p>
-
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="box-content">
-                        <h2>What happens on January 19, 2038?</h2>
-                        <p></p>
-                        <p>
-                            On this date the Unix Time Stamp will cease to work due to a 32-bit overflow. Before this moment millions of applications will need to either adopt a new convention for time stamps or be migrated to 64-bit systems which will buy the time stamp a "bit" more time.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-           
-        </section>
-        <!--section class="wrapper-right">
-            <h2>Related Tools</h2>
-            <div class="box" style="background-color: transparent;">
-                <div class="box-content" style="min-height: 300px;">
-                   
-                </div>
+            <div class="box">
+                <h3>What happens on January 19, 2038?</h3>
+                <p>On this date the Unix Time Stamp will cease to work due to a 32-bit overflow. Before this moment millions of applications will need to either adopt a new convention for time stamps or be migrated to 64-bit systems which will buy the time stamp a "bit" more time.</p>
             </div>
 
-        </section-->
+       </div>
+
+         
+     </div>
        
 
-    </section>
-    <footer>
-        <p>Created by &copy; Aanchal Gupta</p>
+    
+     <footer>
+        <div class="footer-text">
+            <h4>Made with <span class="fa fa-heart"></span> by Aanchal</h4>
+        </div>
+        <div class="footer-icons">
+            <ul>
+                <li> <a href="https://github.com/aangupta"class="fa fa-github"target="_blank"></a></li>
+                <li> <a href="https://www.linkedin.com/in/aanchal-gupta-3ab35bb1/" class="fa fa-linkedin" target="_blank"></a></li>
+                <li><a href="https://twitter.com/aangupta5"class="fa fa-twitter"target="_blank"></a> </li>
+                <li> <a href="mailto: aanchalgupta457@gmail.com" class="fa fa-envelope" target="_blank"></a> </li>
+            </ul>
+            
+        </div>
     </footer>
+
     <script>
 
         function myfunction(){
